@@ -26,7 +26,7 @@
 104D:\PcYuri\Progetti++\javascript\Forkify\node_modules\css-select\lib\pseudo-selectors\subselects.d.ts.map133559361347812395 0
 83D:\PcYuri\Progetti++\javascript\Forkify\node_modules\core-js\es\typed-array\from.js133559484754098915 0
 98D:\PcYuri\Progetti++\javascript\Forkify\node_modules\core-js\modules\esnext.object.iterate-keys.js133559484747946546 0
-44D:\PcYuri\Progetti++\javascript\Forkify\dist133560001722314763 1
+44D:\PcYuri\Progetti++\javascript\Forkify\dist133560007615136404 1
 84D:\PcYuri\Progetti++\javascript\Forkify\node_modules\csso\cjs\replace\Percentage.cjs133559361313909375 0
 96D:\PcYuri\Progetti++\javascript\Forkify\node_modules\core-js\modules\es.typed-array.to-sorted.js133559484743549046 0
 91D:\PcYuri\Progetti++\javascript\Forkify\node_modules\core-js\full\string\virtual\italics.js133559484765511167 0
@@ -247,7 +247,7 @@
 77D:\PcYuri\Progetti++\javascript\Forkify\node_modules\css-tree\cjs\version.cjs133559361371152070 0
 93D:\PcYuri\Progetti++\javascript\Forkify\node_modules\caniuse-lite\data\features\array-flat.js133559361315633466 0
 61D:\PcYuri\Progetti++\javascript\Forkify\src\sass\_upload.scss132886955210000000 0
-60D:\PcYuri\Progetti++\javascript\Forkify\src\js\controller.js133560001713783502 0
+60D:\PcYuri\Progetti++\javascript\Forkify\src\js\controller.js133560007607283001 0
 87D:\PcYuri\Progetti++\javascript\Forkify\node_modules\core-js\features\array\iterator.js133559484765844205 0
 89D:\PcYuri\Progetti++\javascript\Forkify\node_modules\core-js\actual\instance\ends-with.js133559484728492644 0
 66D:\PcYuri\Progetti++\javascript\Forkify\node_modules\lmdb\write.js133559361371913326 0
@@ -3435,7 +3435,7 @@
 105D:\PcYuri\Progetti++\javascript\Forkify\node_modules\css-select\node_modules\entities\lib\esm\decode.d.ts133559361347589439 0
 74D:\PcYuri\Progetti++\javascript\Forkify\node_modules\domutils\lib\feeds.js133559361228196823 0
 71D:\PcYuri\Progetti++\javascript\Forkify\node_modules\core-js\stage\0.js133559484718397637 0
-63D:\PcYuri\Progetti++\javascript\Forkify\dist\icons.dfd7a6db.svg133560001722164637 0
+63D:\PcYuri\Progetti++\javascript\Forkify\dist\icons.dfd7a6db.svg133560007614953476 0
 82D:\PcYuri\Progetti++\javascript\Forkify\node_modules\domutils\lib\helpers.d.ts.map133559361278899199 0
 77D:\PcYuri\Progetti++\javascript\Forkify\node_modules\domutils\lib\legacy.d.ts133559361299249328 0
 87D:\PcYuri\Progetti++\javascript\Forkify\node_modules\core-js\full\array\group-to-map.js133559484757726399 0
@@ -8553,7 +8553,7 @@
 76D:\PcYuri\Progetti++\javascript\Forkify\node_modules\@parcel\workers\LICENSE133559361220784470 0
 96D:\PcYuri\Progetti++\javascript\Forkify\node_modules\@parcel\workers\test\integration\workerfarm133559361319099893 1
 107D:\PcYuri\Progetti++\javascript\Forkify\node_modules\@parcel\workers\test\integration\workerfarm\console.js133559361276257201 0
-62D:\PcYuri\Progetti++\javascript\Forkify\dist\index.e37f48ea.js133560001722274732 0
+62D:\PcYuri\Progetti++\javascript\Forkify\dist\index.e37f48ea.js133560007615066343 0
 113D:\PcYuri\Progetti++\javascript\Forkify\node_modules\@parcel\optimizer-svgo\node_modules\css-select\lib\sort.d.ts133559361321966134 0
 104D:\PcYuri\Progetti++\javascript\Forkify\node_modules\@parcel\workers\test\integration\workerfarm\echo.js133559361291570930 0
 97D:\PcYuri\Progetti++\javascript\Forkify\node_modules\@parcel\workers\lib\threads\ThreadsWorker.js133559361324547227 0
@@ -9032,7 +9032,7 @@
 128D:\PcYuri\Progetti++\javascript\Forkify\node_modules\@parcel\optimizer-htmlnano\node_modules\css-tree\lib\syntax\function\var.js133559361371232748 0
 112D:\PcYuri\Progetti++\javascript\Forkify\node_modules\@parcel\optimizer-svgo\node_modules\css-select\lib\index.js133559361266549901 0
 118D:\PcYuri\Progetti++\javascript\Forkify\node_modules\@parcel\optimizer-svgo\node_modules\css-select\lib\procedure.d.ts133559361318620362 0
-66D:\PcYuri\Progetti++\javascript\Forkify\dist\index.e37f48ea.js.map133560001722304761 0
+66D:\PcYuri\Progetti++\javascript\Forkify\dist\index.e37f48ea.js.map133560007615126392 0
 117D:\PcYuri\Progetti++\javascript\Forkify\node_modules\@parcel\optimizer-svgo\node_modules\css-select\lib\sort.d.ts.map133559361305097327 0
 111D:\PcYuri\Progetti++\javascript\Forkify\node_modules\@parcel\optimizer-svgo\node_modules\css-select\lib\sort.js133559361279920981 0
 114D:\PcYuri\Progetti++\javascript\Forkify\node_modules\@parcel\optimizer-svgo\node_modules\css-select\lib\types.d.ts133559361324557240 0

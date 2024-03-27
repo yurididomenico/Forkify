@@ -160,13 +160,3 @@ showRecipe();
 // IN SHORT ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, showRecipe));
 
-
-
-
-
-
-
-
-
-
-
