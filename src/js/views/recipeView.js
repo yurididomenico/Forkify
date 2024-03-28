@@ -18,17 +18,24 @@ class RecipeView {
         this.#parentElement.innerHTML = '';
     }
 
-    renderSpinner = function(parentEl) {
+    renderSpinner = function () {
         const markup = `
-          <div class="spinner">
+            <div class="spinner">
             <svg>
-              <use href="${icons}.svg#icon-loader"></use>
+                <use href="${icons}.svg#icon-loader"></use>
             </svg>
-          </div>
+            </div>
         `;
         this.#parentElement.innerHTML = '';
         this.#parentElement.insertAdjacentHTML('afterbegin', markup);
-      }
+    }
+
+    addHandlerRender(handler) {
+        // window.addEventListener('hashchange', controlRecipes);
+        // window.addEventListener('load', controlRecipes);
+        // IN SHORT ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+        ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
+    }
 
     #generateMarkup() {
         return `

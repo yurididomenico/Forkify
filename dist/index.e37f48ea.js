@@ -605,17 +605,14 @@ const controlRecipes = async function() {
         // 2) Rendering recipe
         (0, _recipeViewDefault.default).render(_model.state.recipe);
     } catch (err) {
-        alert(err);
+        console.log(err);
     }
 };
 controlRecipes();
-// window.addEventListener('hashchange', controlRecipes);
-// window.addEventListener('load', controlRecipes);
-// IN SHORT ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-[
-    "hashchange",
-    "load"
-].forEach((ev)=>window.addEventListener(ev, controlRecipes));
+const init = function() {
+    (0, _recipeViewDefault.default).addHandlerRender(controlRecipes);
+};
+init();
 
 },{"core-js/modules/web.immediate.js":"49tUX","./model":"Y4A21","./views/recipeView":"l60JC","regenerator-runtime/runtime":"dXNgZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"49tUX":[function(require,module,exports) {
 "use strict";
@@ -2552,17 +2549,26 @@ class RecipeView {
     #clear() {
         this.#parentElement.innerHTML = "";
     }
-    renderSpinner = function(parentEl) {
+    renderSpinner = function() {
         const markup = `
-          <div class="spinner">
+            <div class="spinner">
             <svg>
-              <use href="${(0, _iconsSvgDefault.default)}.svg#icon-loader"></use>
+                <use href="${(0, _iconsSvgDefault.default)}.svg#icon-loader"></use>
             </svg>
-          </div>
+            </div>
         `;
         this.#parentElement.innerHTML = "";
         this.#parentElement.insertAdjacentHTML("afterbegin", markup);
     };
+    addHandlerRender(handler) {
+        // window.addEventListener('hashchange', controlRecipes);
+        // window.addEventListener('load', controlRecipes);
+        // IN SHORT ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+        [
+            "hashchange",
+            "load"
+        ].forEach((ev)=>window.addEventListener(ev, handler));
+    }
     #generateMarkup() {
         return `
             <figure class="recipe__fig">
