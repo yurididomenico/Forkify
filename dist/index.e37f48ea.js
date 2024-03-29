@@ -623,16 +623,24 @@ const controlSearchResults = async function() {
         await _model.loadSearchResults(query);
         // 3) Render results
         // resultsView.render(model.state.search.results);
-        (0, _resultsViewDefault.default).render(_model.getSearchResultsPage(6));
+        (0, _resultsViewDefault.default).render(_model.getSearchResultsPage());
         //4) Render initial pagination buttons
         (0, _paginationViewDefault.default).render(_model.state.search);
     } catch (err) {
         console.log(err);
     }
 };
+const controlPagination = function(goToPage) {
+    // 3) Render NEW results
+    // resultsView.render(model.state.search.results);
+    (0, _resultsViewDefault.default).render(_model.getSearchResultsPage(goToPage));
+    //4) Render NEW pagination buttons
+    (0, _paginationViewDefault.default).render(_model.state.search);
+};
 const init = function() {
     (0, _recipeViewDefault.default).addHandlerRender(controlRecipes);
     (0, _searchViewDefault.default).addHandlerSearch(controlSearchResults);
+    (0, _paginationViewDefault.default).addHandlerClick(controlPagination);
 };
 init();
 
@@ -1903,7 +1911,6 @@ const loadRecipe = async function(id) {
             cookingTime: recipe.cooking_time,
             ingredients: recipe.ingredients
         };
-        console.log(state.recipe);
     } catch (err) {
         console.error(`${err} \u{1F4A5}\u{1F4A5}\u{1F4A5}`);
         throw err;
@@ -3085,7 +3092,6 @@ class ResultsView extends (0, _viewDefault.default) {
     _errorMessage = "No recipes found for your query! Please try again :)";
     _message = "";
     _generateMarkup() {
-        console.log(this._data);
         return this._data.map(this._generateMarkupPreview).join("");
     }
     _generateMarkupPreview(result) {
@@ -3115,42 +3121,43 @@ var _iconsSvg = require("url:../../img/icons.svg");
 var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
 class PaginationView extends (0, _viewDefault.default) {
     _parentElement = document.querySelector(".pagination");
+    addHandlerClick(handler) {
+        this._parentElement.addEventListener("click", function(e) {
+            const btn = e.target.closest(".btn--inline");
+            if (!btn) return;
+            const goToPage = +btn.dataset.goto;
+            handler(goToPage);
+        });
+    }
     _generateMarkup() {
         const curPage = this._data.page;
         const numPages = Math.ceil(this._data.results.length / this._data.resultsPerPage);
-        console.log(numPages);
-        // Page 1, and there are other pages
-        if (curPage === 1 && numPages > 1) return `
-                <button class="btn--inline pagination__btn--next">
-                    <span>Page ${curPage + 1}</span>
-                    <svg class="search__icon">
-                        <use href="${0, _iconsSvgDefault.default}#icon-arrow-right"></use>
-                    </svg>
-                </button>
-            `;
-        // Last page
-        if (curPage === numPages && numPages > 1) return `
-                <button class="btn--inline pagination__btn--prev">
+        const printBtn = function(where) {
+            if (where === "next") return `
+                    <button data-goto="${curPage + 1}" class="btn--inline pagination__btn--next">
+                        <span>Page ${curPage + 1}</span>
+                        <svg class="search__icon">
+                            <use href="${0, _iconsSvgDefault.default}#icon-arrow-right"></use>
+                        </svg>
+                    </button>
+                `;
+            if (where === "prev") return `
+                <button data-goto="${curPage - 1}" class="btn--inline pagination__btn--prev">
                     <svg class="search__icon">
                         <use href="${0, _iconsSvgDefault.default}#icon-arrow-left"></use>
                     </svg>
                     <span>Page ${curPage - 1}</span>
                 </button>
             `;
+        };
+        // Page 1, and there are other pages
+        if (curPage === 1 && numPages > 1) return printBtn("next");
+        // Last page
+        if (curPage === numPages && numPages > 1) return printBtn("prev");
         // Other page
         if (curPage < numPages) return `
-                <button class="btn--inline pagination__btn--next">
-                <span>Page ${curPage + 1}</span>
-                <svg class="search__icon">
-                    <use href="${0, _iconsSvgDefault.default}#icon-arrow-right"></use>
-                </svg>
-                </button>
-                <button class="btn--inline pagination__btn--prev">
-                    <svg class="search__icon">
-                        <use href="${0, _iconsSvgDefault.default}#icon-arrow-left"></use>
-                    </svg>
-                    <span>Page ${curPage - 1}</span>
-                </button>
+                ${printBtn("next")}
+                ${printBtn("prev")}
             `;
         // Page 1, and there are NO other pages
         return "";
